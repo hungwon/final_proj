@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Kimchi Garden",
+        "description": "A popular spot for Korean cuisine, famous for its kimchi fried rice and a variety of traditional stews and grills, frequented by those looking for authentic flavors and a loyalty rewards program.",
+        "cuisine": "Korean",
+        "popular_menus": [
+            "Kimchi Fried Rice",
+            "Tofu Soup",
+            "Beef Kimbap",
+            "Spicy Dukbokgi",
+            "Ton Katsu Mayo"
+        ],
+        "img": "/mnt/data/IMG_0138.PNG",
+        "distance": "0.3 mi"
+    },
+    {}
+]
