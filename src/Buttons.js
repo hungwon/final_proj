@@ -63,10 +63,6 @@ export const Dropdown = () => {
 }
 
 export const GuessBtn = () => {
-    let handleClick = () => {
-        console.log("Guess button clicked");
-    }
-
     return (
         <>
             <select className="guess_btn">
