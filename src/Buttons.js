@@ -8,7 +8,7 @@ export const DailyBtn = () => {
     console.log("Daily button clicked");
     return (
         <>
-            <button className="daily_btn">Daily</button>
+            <button className="daily_btn start_btn">Daily</button>
         </>
     )
 }
@@ -44,7 +44,7 @@ export const PracticeBtn = () => {
     console.log("Practice button clicked");
     return (
         <>
-            <button className="practice_btn">Practice</button>
+            <button className="practice_btn start_btn">Practice</button>
         </>
     )
 }

@@ -1,15 +1,18 @@
-.daily_btn {
-    background-color: var(--sky_blue);
-    color: var(--deep_blue);
-    font-size: 32pt;
+.start_btn {
+    font-size: 2rem;
     font-family: 'IBM Plex Mono', sans-serif;
     text-align: center;
     padding: 0px;
-    margin: 10px;
-    width: 500px;
-    height: 120px;
-    border-radius: 30px;
+    margin: 0.6rem;
+    width: 31rem;
+    height: 7.5rem;
+    border-radius: 1.8rem;
     border: 0px;
+}
+
+.daily_btn {
+    background-color: var(--sky_blue);
+    color: var(--deep_blue);
 }
 
 .daily_btn:hover {
@@ -21,7 +24,7 @@
 .again_btn {
     background-color: var(--sky_blue);
     color: var(--deep_blue);
-    font-size: 24pt;
+    font-size: 1.5rem;
     font-family: 'IBM Plex Mono', sans-serif;
     text-align: center;
     padding: 0px;
@@ -41,7 +44,7 @@
 .next_btn {
     background-color: var(--sky_blue);
     color: var(--deep_blue);
-    font-size: 24pt;
+    font-size: 1.5rem;
     font-family: 'IBM Plex Mono', sans-serif;
     text-align: center;
     padding: 0px;
@@ -62,15 +65,6 @@
 .practice_btn {
     background-color: var(--light_red);
     color: var(--deep_red);
-    font-size: 24pt;
-    font-family: 'IBM Plex Mono', sans-serif;
-    text-align: center;
-    padding: 0px;
-    margin: 10px;
-    width: 500px;
-    height: 120px;
-    border-radius: 30px;
-    border: 0px;
 }
 
 .practice_btn:hover {
