@@ -2,6 +2,7 @@ import React from "react";
 import "./Styleguide.css";
 import "./Btn.css";
 
+
 export const DailyBtn = () => {
     console.log("Daily button clicked");
     return (
@@ -30,6 +31,8 @@ export const NextBtn = () => {
 }
 
 export const HomeBtn = () => {
+
+
     console.log("Home button clicked");
     return (
         <>
@@ -47,11 +50,30 @@ export const PracticeBtn = () => {
     )
 }
 
-export const GuessBtn = () => {
-    console.log("Guess button clicked");
+export const Dropdown = () => {
     return (
         <>
-            <button className="guess_btn">Guess the Restaurant</button>
+            <select className="dropdown">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </>
+    )
+}
+
+export const GuessBtn = () => {
+    let handleClick = () => {
+        console.log("Guess button clicked");
+    }
+
+    return (
+        <>
+            <select className="guess_btn">
+                <option value="1">Ib's</option>
+                <option value="2">Kimchi Garden</option>
+                <option value="3">Super Duper Burger</option>
+            </select>
         </>
     )
 }
