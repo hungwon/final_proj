@@ -1,6 +1,7 @@
 import React from "react";
 import "./Styleguide.css";
 import "./Btn.css";
+import data from "./data.json";
 
 
 export const DailyBtn = () => {
@@ -31,8 +32,6 @@ export const NextBtn = () => {
 }
 
 export const HomeBtn = () => {
-
-
     console.log("Home button clicked");
     return (
         <>
@@ -66,9 +65,11 @@ export const GuessBtn = () => {
     return (
         <>
             <select className="guess_btn">
-                <option value="1">Ib's</option>
-                <option value="2">Kimchi Garden</option>
-                <option value="3">Super Duper Burger</option>
+                {
+                    data.map((item) => (
+                        <option value={item.id}>{item.name}</option>
+                    ))
+                }
             </select>
         </>
     )

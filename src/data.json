@@ -1,17 +1,152 @@
 [
     {
+        "idx": 1,
         "name": "Kimchi Garden",
         "description": "A popular spot for Korean cuisine, famous for its kimchi fried rice and a variety of traditional stews and grills, frequented by those looking for authentic flavors and a loyalty rewards program.",
         "cuisine": "Korean",
-        "popular_menus": [
+        "top5_menu": [
             "Kimchi Fried Rice",
             "Tofu Soup",
             "Beef Kimbap",
             "Spicy Dukbokgi",
             "Ton Katsu Mayo"
         ],
-        "img": "/mnt/data/IMG_0138.PNG",
+        "img": "./img/kimchigarden_food.PNG",
         "distance": "0.3 mi"
     },
-    {}
+    {
+        "idx": 2,
+        "name": "Berkeley Dumpling Kitchen",
+        "description": "A vibrant eatery renowned for its diverse range of dumplings and other Chinese delights. It's a favorite among locals who value the reward points system.",
+        "cuisine": "Chinese",
+        "top5_menu": [
+            "Kurobuta Pork Soup Dumplings",
+            "Juicy Kurobuta Pork Buns",
+            "Shanghai Style Chow Mein",
+            "Wonton In House Broth",
+            "Soda (Various Flavors)"
+        ],
+        "img": "./img/dumpling_food.PNG",
+        "distance": "0.3 mi"
+    },
+    {
+        "idx": 3,
+        "name": "IB's",
+        "description": "A local favorite offering a selection of classic American fast food. It's well-known for its burgers and fries and features a customer reward system.",
+        "cuisine": "American",
+        "top5_menu": [
+            "Minwoo Kim",
+            "Cheeseburger",
+            "IB's Original Cheesesteak",
+            "Drink (Coca Cola Freestyle Machine)",
+            "Garlic Fries"
+        ],
+        "img": "img/ibs_food.PNG",
+        "distance": "0.3 mi"
+    },
+    {
+        "idx": 4,
+        "name": "D'Yar",
+        "description": "An establishment that provides a taste of Middle Eastern cuisine, specializing in dishes like falafel wraps and is loved for its customer loyalty rewards.",
+        "cuisine": "Middle Eastern",
+        "top5_menu": [
+            "Chicken Shawerma Plate",
+            "Beef And Lamb Gyro Plate",
+            "Chicken Shawarma Snack",
+            "Beef And Lamb Gyro Wrap",
+            "Rice Bowl"
+        ],
+        "img": "./img/dyar_food.PNG",
+        "distance": "0.25 mi"
+    },
+    {
+        "idx": 5,
+        "name": "Blondie's Pizza",
+        "description": "This pizzeria is famed for its generous slices and various pizza options, attracting those who enjoy American-style pizza and appreciate a rewards program.",
+        "cuisine": "Italian",
+        "top5_menu": [
+            "Valentine's Day Heart Shaped Pizza",
+            "Pepperoni Slice",
+            "Cheese Slice",
+            "Pepperoni Pizza - Personal",
+            "Vegetarian Slice"
+        ],
+        "img": "./img/blondies_food.PNG",
+        "distance": "0.23 mi"
+    },
+    {
+        "idx": 6,
+        "name": "T-toust",
+        "description": "A culinary spot celebrated for its Korean dishes, particularly its soups and bibimbap. It is popular with diners who enjoy authentic Korean flavors and a loyalty program.",
+        "cuisine": "Korean",
+        "top5_menu": [
+            "Beef Tofu Soup",
+            "Hotpot Bibim Bop",
+            "Spicy Pork",
+            "Dumpling Tofu Soup",
+            "Bibim Bop(Cold)"
+        ],
+        "img": "./img/ttoust_food.PNG",
+        "distance": "0.4 mi"
+    },
+    {
+        "idx": 7,
+        "name": "Super Duper Burgers",
+        "description": "A bustling burger joint known for its artisanal burgers and a wide variety of toppings, appealing to those who enjoy classic American comfort food.",
+        "cuisine": "American",
+        "top5_menu": [
+            "Fried Chicken Sandwich",
+            "French Fries",
+            "Super Burger",
+            "Garlic Fries",
+            "Chicken Sandwich"
+        ],
+        "img": "./img/superduper_food.PNG",
+        "distance": "0.4 mi"
+    },
+    {
+        "idx": 8,
+        "name": "KoJa Kitchen",
+        "description": "A fusion eatery blending Korean flavors with Japanese techniques, offering unique dishes like the Kamikaze Fries and a variety of rice bowls.",
+        "cuisine": "Korean-Japanese Fusion",
+        "top5_menu": [
+            "Kamikaze Fries",
+            "Minwoo Kim Chicken Bowl",
+            "Short Rib Bowl",
+            "Short Rib Koja",
+            "Beef Bowl"
+        ],
+        "img": "./img/koja_food.PNG",
+        "distance": "0.4 mi"
+    },
+    {
+        "idx": 9,
+        "name": "Muracci's Berkeley",
+        "description": "A Japanese establishment specializing in curry and other traditional dishes, known for its hearty flavors and generous portions.",
+        "cuisine": "Japanese",
+        "top5_menu": [
+            "Katsu Curry",
+            "Chicken Katsu Curry",
+            "Fried Gyoza",
+            "Katsu Don",
+            "Beef Curry"
+        ],
+        "img": "./img/murraci_food.PNG",
+        "distance": "0.5 mi"
+    },
+    {
+        "idx": 10,
+        "name": "Poke Parlor",
+        "description": "A trendy spot for poke bowls, featuring fresh, sustainably-sourced ingredients and offering a customizable bowl experience.",
+        "cuisine": "Hawaiian",
+        "top5_menu": [
+            "Build Your Own Bowl Size Medium",
+            "Build Your Own Bowl Size Small",
+            "Build Your Own Bowl Size Large",
+            "Spicy Salmon",
+            "Salmon Supreme"
+        ],
+        "img": "./img/pokeparlor_food.PNG",
+        "distance": "0.5 mi"
+    }
 ]
