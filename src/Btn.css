@@ -1,0 +1,101 @@
+.daily_btn {
+    background-color: var(--sky_blue);
+    color: var(--deep_blue);
+    font-size: 32pt;
+    font-family: 'IBM Plex Mono', sans-serif;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    width: 520px;
+    height: 120px;
+    border-radius: 30px;
+    border: 0px;
+}
+
+.daily_btn:hover {
+    background-color: var(--sky_blue);
+    color: var(--red);
+    cursor: pointer;
+}
+
+.again_btn {
+    background-color: var(--sky_blue);
+    color: var(--deep_blue);
+    font-size: 24pt;
+    font-family: 'IBM Plex Mono', sans-serif;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    width: 300px;
+    height: 72px;
+    border-radius: 20px;
+    border: 0px;
+}
+
+.again_btn:hover {
+    background-color: var(--sky_blue);
+    color: var(--red);
+    cursor: pointer;
+}
+
+.next_btn {
+    background-color: var(--sky_blue);
+    color: var(--deep_blue);
+    font-size: 24pt;
+    font-family: 'IBM Plex Mono', sans-serif;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    width: 120px;
+    height: 56px;
+    border-radius: 20px;
+    border: 0px;
+}
+
+.next_btn:hover {
+    background-color: var(--sky_blue);
+    color: var(--red);
+    cursor: pointer;
+}
+
+
+.practice_btn {
+    background-color: var(--light_red);
+    color: var(--deep_red);
+    font-size: 24pt;
+    font-family: 'IBM Plex Mono', sans-serif;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    width: 500px;
+    height: 120px;
+    border-radius: 30px;
+    border: 0px;
+}
+
+.practice_btn:hover {
+    background-color: var(--light_red);
+    color: var(--black);
+    cursor: pointer;
+}
+
+.guess_btn {
+    background-color: var(--white);
+    color: var(--mid_grey);
+    font-size: 20pt;
+    font-family: 'IBM Plex Mono', sans-serif;
+    text-align: left;
+    padding: 0px;
+    padding-left: 20px;
+    margin: 0px;
+    width: 450px;
+    height: 62px;
+    border-radius: 10px;
+    border: 1px solid var(--grey);
+}
+
+.guess_btn:hover {
+    background-color: var(--white);
+    color: var(--black);
+    cursor: pointer;
+}
