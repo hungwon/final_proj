@@ -49,18 +49,6 @@ export const PracticeBtn = () => {
     )
 }
 
-export const Dropdown = () => {
-    return (
-        <>
-            <select className="dropdown">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-        </>
-    )
-}
-
 export const GuessBtn = () => {
     return (
         <>
