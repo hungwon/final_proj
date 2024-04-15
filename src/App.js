@@ -1,12 +1,19 @@
 import './App.css';
-import './Styleguide.css';
+import './styleguide.css';
 import React from 'react';
 import { Landing } from './Landing';
+import { Game } from './Game';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Landing />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Landing />} />
+          <Route path="daily" element={<Game />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

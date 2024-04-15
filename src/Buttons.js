@@ -1,5 +1,5 @@
 import React from "react";
-import "./Styleguide.css";
+import "./styleguide.css";
 import "./Btn.css";
 import data from "./data.json";
 
