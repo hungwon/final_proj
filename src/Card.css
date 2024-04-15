@@ -1,0 +1,120 @@
+/* General Card CSS */
+
+.card {
+    border-radius: 30px;
+    border: 1px solid var(--mid_grey);
+}
+
+.img-container {
+    border-radius: 30px;
+    border: 1px solid var(--mid_grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 520px;
+    height: 360px;
+    min-height: 360px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Previous Answer Container CSS */
+.prev-ans {
+    margin-bottom: 10px;
+    width: 524px;
+    height: 62px;
+    border-radius: 10px;
+    border: 1px solid var(--grey);
+    background-color: var(--white);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--blue);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.prevAns-container {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Restaurant Card CSS */
+
+.restaurant-card {
+    position: relative;
+    width: 630px;
+    height: 700px;
+    max-height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    width: 630px;
+    height: 700px;
+    box-shadow: inset 0px -20px 40px 10px var(--light_green);
+}
+
+.guess-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.trial-indicator {
+    background-color: var(--white);
+    color: var(--grey);
+    font-size: 20px;
+    font-family: 'IBM Plex Mono', sans-serif;
+    padding: 0px;
+    margin-left: 10px;
+    width: 62px;
+    max-height: 62px;
+    border-radius: 10px;
+    border: 1px solid var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Correct/Incorrect Symbols */
+.checkmark {
+    display: inline-block;
+    transform: rotate(45deg);
+    height: 20px;
+    width: 9px;
+    margin-left: 30px;
+    margin-right: 25px;
+    margin-bottom: 5px;
+    border-bottom: 5px solid #78b13f;
+    border-right: 5px solid #78b13f;
+  }
+
+.cross {
+    color: var(--red);
+    font-size: 50px;
+    margin-left: 22px;
+    margin-right: 17px;
+    margin-bottom: 5px;
+}
+
+.cross:after {
+    display: inline-block;
+    content: "\00d7"; 
+}
