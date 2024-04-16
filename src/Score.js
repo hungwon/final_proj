@@ -38,8 +38,9 @@ class Score extends React.Component {
   render() {
     return (
       <div>
-        <h1>Score: {this.state.score}</h1>
-        <h2>Total Score: {this.sumScores()}</h2>
+        <h1>score: {this.state.score}</h1>
+        <h1>round : {this.state.round} / 3</h1>
+        <h2>Total Score: {this.sumScores()} / 300</h2>
       </div>
     );
   }
