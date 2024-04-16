@@ -15,16 +15,17 @@ const restaurantNames = [
 
   //Is the path correct?
 const imagePaths = [
-    "img/blondies_food.PNG",
-    "img/dumpling_food.PNG",
-    "public/img/dyar_food.PNG",
-    "public/img/ibs_food.PNG",
-    "public/img/kimchigarden_food.PNG",
-    "public/img/koja_food.PNG",
-    "public/img/murraci_food.PNG",
-    "public/img/pokeparlor_food.PNG",
-    "public/img/superduper_food.PNG",
-    "public/img/ttoust_food.PNG"
+
+    "../public/img/blondies_food.PNG",
+    "../public/img/dumpling_food.PNG",
+    "../public/img/dyar_food.PNG",
+    "../public/img/ibs_food.PNG",
+    "../public/img/kimchigarden_food.PNG",
+    "../public/img/koja_food.PNG",
+    "../public/img/murraci_food.PNG",
+    "../public/img/pokeparlor_food.PNG",
+    "../public/img/superduper_food.PNG",
+    "../public/img/ttoust_food.PNG"
   ];
 
   function getRandomInt(min, max) {
@@ -38,13 +39,10 @@ const imagePaths = [
     }
 
     const randomNumber = getRandomInt(0, 9);
-    const randomImagePath = imagePaths[randomIndex]; 
-    const imageContainer = document.getElementById("imageContainer");
-    imageContainer.src = randomImagePath;
+    const randomImagePath = imagePaths[randomNumber]; 
     const corName  = imageRestaurantMapping[randomImagePath];
 
     //textbox
-    document.getElementById("guessInput").value = "";
-    imageContainer.setAttribute("data-restaurant", restaurantName);
+    return { restaurantName: corName, imagePath: randomImagePath };
   }
 
