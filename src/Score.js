@@ -30,10 +30,16 @@ class Score extends React.Component {
     });
   };
 
+  sumScores = () => {
+    const { scores } = this.state;
+    return scores.reduce((total, score) => total + score, 0);
+  };
+
   render() {
     return (
       <div>
         <h1>Score: {this.state.score}</h1>
+        <h2>Total Score: {this.sumScores()}</h2>
       </div>
     );
   }
