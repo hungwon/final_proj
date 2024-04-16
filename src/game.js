@@ -12,12 +12,15 @@ export const Game = () => {
 
     return (
         <div className="game_page">
-            <RestaurantCard restaurant={randRestaurant}/>
-            <HintCard />
-            <ScoreCard />
-            <ProfileCard />
-            <SummaryCard />
-            <ResultCard />
+            {/* TODO: For testing, remove later */}
+
+            {/* <RestaurantCard restaurant={randRestaurant}/> */}
+            {/* <HintCard restaurant={randRestaurant} hintno={1} />
+            <HintCard restaurant={randRestaurant} hintno={2} /> */}
+            {/* <ScoreCard guessScore={75} score={85}/> */}
+            {/* <ProfileCard restaurant={randRestaurant} isRevealed={false}/> */}
+            {/* <SummaryCard restaurant={randRestaurant} roundno={1} guessno={2} score={85}/> */}
+            <ResultCard restaurant={randRestaurant} guesses={["Ib's", "Kimchi Garden"]} guessScore={75} score={85}/>
         </div>
     )
 }
