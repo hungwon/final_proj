@@ -42,7 +42,6 @@ const imagePaths = [
     const randomImagePath = imagePaths[randomNumber]; 
     const corName  = imageRestaurantMapping[randomImagePath];
 
-    //textbox
     return { restaurantName: corName, imagePath: randomImagePath };
   }
 

@@ -47,25 +47,42 @@
         height: 200px; /* Adjust the height as needed */
       }
     </style>
-    
+
     <div id="imageContainer">
       <img id="restaurantImage" src="" alt="Restaurant Image">
       <p id="restaurantName"></p>
     </div>
+
+    <button id="generateButton">Generate New Restaurant</button>
     <script src="../src/game.js"></script>
 
     <script>
-      // Call the chooseRestaurant function from game.js to get a random restaurant and its image
+      function updateImage() {
       const { restaurantName, imagePath } = chooseImage();
-  
-      // Set the src attribute of the image element to the randomly chosen image path
+      
       const restaurantImage = document.getElementById("restaurantImage");
       restaurantImage.src = imagePath;
+
+      localStorage.setItem("restaurantImage", imagePath);
       
-      // Display the restaurant name
       const restaurantNameElement = document.getElementById("restaurantName");
       restaurantNameElement.textContent = "Restaurant: " + restaurantName;
+    }
+
+    function displayStoredImage() {
+      const storedImagePath = localStorage.getItem("restaurantImage");
+      if (storedImagePath) {
+        const restaurantImage = document.getElementById("restaurantImage");
+        restaurantImage.src = storedImagePath;
+      }
+    }
+
+    displayStoredImage();
+
+    const generateButton = document.getElementById("generateButton");
+    generateButton.addEventListener("click", updateImage);
     </script>
 
+    
   </body>
 </html>
