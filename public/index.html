@@ -53,31 +53,23 @@
       <p id="restaurantName"></p>
     </div>
 
+    <div class="restaurant-card" id="restaurantCard">
+      <h2>Loading...</h2>
+  </div>
+
     <button id="generateButton">Generate New Restaurant</button>
     <script src="../src/game.js"></script>
 
     <script>
-      function updateImage() {
-      const { restaurantName, imagePath } = chooseImage();
       
-      const restaurantImage = document.getElementById("restaurantImage");
-      restaurantImage.src = imagePath;
+    import { displayStoredImage, updateImage } from '../src/game.js';
 
-      localStorage.setItem("restaurantImage", imagePath);
-      
-      const restaurantNameElement = document.getElementById("restaurantName");
-      restaurantNameElement.textContent = "Restaurant: " + restaurantName;
-    }
 
-    function displayStoredImage() {
-      const storedImagePath = localStorage.getItem("restaurantImage");
-      if (storedImagePath) {
-        const restaurantImage = document.getElementById("restaurantImage");
-        restaurantImage.src = storedImagePath;
-      }
-    }
 
-    displayStoredImage();
+    // Call displayStoredImage() when the page loads
+    window.onload = function() {
+      displayStoredImage();
+    };
 
     const generateButton = document.getElementById("generateButton");
     generateButton.addEventListener("click", updateImage);

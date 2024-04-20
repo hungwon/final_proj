@@ -1,5 +1,7 @@
 //game logic, return image path and restaurant name that corresponds to the image
 
+import df from './data.json' 
+
 const restaurantNames = [
     "Blondies",
     "Dumping Kitchen",
@@ -32,16 +34,27 @@ const imagePaths = [
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  function chooseImage(){
+  function chooseRest(){
     const imageRestaurantMapping = {};
     for (let i = 0; i < imagePaths.length; i++) {
         imageRestaurantMapping[imagePaths[i]] = restaurantNames[i];
     }
-
     const randomNumber = getRandomInt(0, 9);
-    const randomImagePath = imagePaths[randomNumber]; 
-    const corName  = imageRestaurantMapping[randomImagePath];
-
-    return { restaurantName: corName, imagePath: randomImagePath };
+    console.log(df[randomNumber])
+    return df[randomNumber]
   }
 
+    function updateImage() {
+        const restaurant =  chooseRest();
+        localStorage.setItem("restaurant-card", restaurant);
+        return restaurant
+      }
+  
+      function displayStoredImage() {
+        const storedObj = localStorage.getItem("retaurant-card");
+        if (storedObj) {
+          const restaurant = JSON.parse(storedObj);
+          const rest = document.getElementById("restaurant-card");
+        }
+      }
+      export { updateImage, displayStoredImage };
