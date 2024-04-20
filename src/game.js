@@ -57,4 +57,5 @@ const imagePaths = [
           const rest = document.getElementById("restaurant-card");
         }
       }
-      export { updateImage, displayStoredImage };
+    export {updateImage, displayStoredImage}
+  
