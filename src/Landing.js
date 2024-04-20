@@ -1,6 +1,8 @@
+// Landing component
+
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import "./styleguide.css";
+
 import { DailyBtn, PracticeBtn } from "./Buttons";
 import { Link } from "react-router-dom";
 import { signInWithGoogle } from "./userAuth"; // Import your Firebase authentication function
@@ -49,12 +51,14 @@ export const Landing = () => {
                     <p className="title_left">CalFood</p><p className="title_right">Guesser</p>
                 </div>
                 <p className="txt_detail">a daily Berkeley restaurant guessing game based on <a href="https://www.foodguessr.com/">FoodGuessr</a></p>
-                {!isAuthenticated && <button onClick={handleGoogleLogin}>Sign in with Google</button>} {/* Google login button */}
+                {!isAuthenticated && <button className="google-signin-btn" onClick={handleGoogleLogin}>Sign in with Google</button>} {/* Google login button */}
                 {isAuthenticated && (
                     <>
                         <Link to="daily"><DailyBtn /></Link>
                         <PracticeBtn />
-                        <p>Hello {userName}. Your current total score is 0.</p> {/* Greeting with user's name */}
+                            
+<p className="greeting-message">Hello {userName}. Your current total score is 0.</p>
+
                     </>
                 )}
             </div>
