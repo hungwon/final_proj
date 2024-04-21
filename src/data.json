@@ -12,7 +12,10 @@
             "Ton Katsu Mayo"
         ],
         "img": "./img/kimchigarden_food.PNG",
-        "distance": "0.3 mi"
+        "distance": "0.3 mi",
+        "address": "2517 Durant Ave Ste B Berkeley, CA 94704",
+        "popularity": "2",
+        "url": "https://www.kimchigardenbayarea.com/"
     },
     {
         "idx": 2,
@@ -27,7 +30,10 @@
             "Soda (Various Flavors)"
         ],
         "img": "./img/dumpling_food.PNG",
-        "distance": "0.3 mi"
+        "distance": "0.3 mi",
+        "address": "2517 Durant Ave Ste A Berkeley, CA 94704",
+        "popularity": "3",
+        "url": "http://www.dumplingkitchenberkeley.com/"
     },
     {
         "idx": 3,
@@ -42,7 +48,10 @@
             "Garlic Fries"
         ],
         "img": "img/ibs_food.PNG",
-        "distance": "0.3 mi"
+        "distance": "0.3 mi",
+        "address": "2513 Durant Ave Berkeley, CA 94704",
+        "popularity": "2",
+        "url": "https://ibscheesesteaks.com/"
     },
     {
         "idx": 4,
@@ -57,7 +66,10 @@
             "Rice Bowl"
         ],
         "img": "./img/dyar_food.PNG",
-        "distance": "0.25 mi"
+        "distance": "0.25 mi",
+        "address": "2511 Durant Ave Berkeley, CA 94704",
+        "popularity": "3",
+        "url": "http://www.dyarberkeley.com/"
     },
     {
         "idx": 5,
@@ -72,7 +84,10 @@
             "Vegetarian Slice"
         ],
         "img": "./img/blondies_food.PNG",
-        "distance": "0.23 mi"
+        "distance": "0.23 mi",
+        "address": "2340 Telegraph Ave Berkeley, CA 94704",
+        "popularity": "1",
+        "url": "https://blondiespizza.com/"
     },
     {
         "idx": 6,
@@ -87,7 +102,10 @@
             "Bibim Bop(Cold)"
         ],
         "img": "./img/ttoust_food.PNG",
-        "distance": "0.4 mi"
+        "distance": "0.4 mi",
+        "address": "2433 Durant Ave Ste F Berkeley, CA 94704",
+        "popularity": "2",
+        "url": "https://www.yelp.com/biz/t-toust-berkeley"
     },
     {
         "idx": 7,
@@ -102,7 +120,10 @@
             "Chicken Sandwich"
         ],
         "img": "./img/superduper_food.PNG",
-        "distance": "0.4 mi"
+        "distance": "0.4 mi",
+        "address": "2355 Telegraph Ave Berkeley, CA 94704",
+        "popularity": "4",
+        "url": "https://www.superduperburgers.com/"
     },
     {
         "idx": 8,
@@ -117,7 +138,10 @@
             "Beef Bowl"
         ],
         "img": "./img/koja_food.PNG",
-        "distance": "0.4 mi"
+        "distance": "0.4 mi",
+        "address": "2395 Telegraph Ave Berkeley, CA 94704",
+        "popularity": "3",
+        "url": "https://www.kojakitchen.com/"
     },
     {
         "idx": 9,
@@ -132,7 +156,10 @@
             "Beef Curry"
         ],
         "img": "./img/murraci_food.PNG",
-        "distance": "0.5 mi"
+        "distance": "0.5 mi",
+        "address": "2428 Telegraph Ave Berkeley, CA 94704",
+        "popularity": "5",
+        "url": "http://www.muraccis.com/berkeley/"
     },
     {
         "idx": 10,
@@ -147,6 +174,9 @@
             "Salmon Supreme"
         ],
         "img": "./img/pokeparlor_food.PNG",
-        "distance": "0.5 mi"
+        "distance": "0.5 mi",
+        "address": "2485 Telegraph Ave Berkeley, CA 94704",
+        "popularity": "3",
+        "url": "http://www.pokeparlor.com/"
     }
 ]
