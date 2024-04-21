@@ -45,12 +45,7 @@ export const RestaurantCard = ({ restaurant }) => {
                     <span>/{totalGuesses}</span>
                 </div>
             </div>
-            <div className="prevAns-container">
-                {/* TODO: For testing, remove later */}
-                <PrevAns isCorrect={true} guess={"Kimchi Garden"}/>
-                <PrevAns isCorrect={false} guess={"Berkeley Dumpling House"}/>
-                <PrevAns isCorrect={false} guess={"Super Duper Burgers"}/>
-            </div>
+            <div className="prevAns-container"></div>
             <div className="shadow"></div>
         </div>
     )
@@ -62,21 +57,24 @@ export const HintCard = ({ restaurant, hintno }) => {
         console.log("Displaying hint 1")
         Content = () => {
             return (
-                <p className="restaurantDescription">
+                <div className="restaurantDescription">
                     <span className="medium-bold">Description:</span> {restaurant.description}
-                </p>
+                </div>
             )
-            // TODO: Add additional clues (Price Point)
         }
     } else if (hintno === 2) {
         console.log("Displaying hint 2")
         Content = () => {
             return (
-                <p className="distFromCampus">
-                    <span className="medium-bold">Distance From Campus:</span> {restaurant.distance}
-                </p>
+                <>
+                    <div className="distFromCampus">
+                        <span className="medium-bold">Distance From Campus:</span> {restaurant.distance}
+                    </div>
+                    <div className="address">
+                        <span className="medium-bold">Address:</span> {restaurant.address}
+                    </div>
+                </>
             )
-            // TODO: Add additional clues (Address)
         }
     }
 
@@ -91,11 +89,8 @@ export const HintCard = ({ restaurant, hintno }) => {
     )
 }
 
-export const ScoreCard = ({ restaurant, guessScore, score }) => {
+export const ScoreCard = ({ difficultyScore, guessScore, score }) => {
     const textColor = calculateColor(score);
-
-    // TODO: This level of difficulty is a placeholder.
-    const difficultyScore = 10;
 
     return (
         <div className="card info-card score-card">
@@ -170,8 +165,7 @@ export const SummaryCard = ({ restaurant, roundno, guessno, score }) => {
                     </div>
                 </div>
                 <div className="restaurant-link">
-                    {/* TODO: Insert restaurant link into JSON */}
-                    <a href="https://www.google.com" rel="noreferrer" target= "_blank">Link to Restaurant</a>
+                    <a href={restaurant.url} rel="noreferrer" target= "_blank">Link to Restaurant</a>
                 </div>
             </div>
         </div>
@@ -180,7 +174,7 @@ export const SummaryCard = ({ restaurant, roundno, guessno, score }) => {
 
 export const ResultCard = ({ restaurant, guesses, guessScore, score }) => {
     const isWin = (score > 0);
-    // TODO: Consolidate scoring variables into a single score object or use props
+
     return (
         <div className="card result-card">
             <div className="result-left">

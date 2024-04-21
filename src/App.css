@@ -56,10 +56,18 @@
     height: 100vh;
     width: 100%;
     background-color: var(--light_green);
-
-    /* TODO: For testing, Remove later */
     flex-direction: column;
     justify-content: center;
+}
+
+.game-container {
+    display: flex;
+    gap: 70px;
+}
+
+.game-right {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
 }
 
