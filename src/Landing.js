@@ -1,4 +1,4 @@
-// Landing component
+// Landing.js
 
 import React, { useState, useEffect } from "react";
 import "./App.css";
@@ -11,6 +11,7 @@ import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from
 export const Landing = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false); // State variable to track authentication status
     const [userName, setUserName] = useState(""); // State variable to store the user's name
+    const [score, setScore] = useState(0); // State variable to store the score
 
     useEffect(() => {
         const auth = getAuth(); // Get the authentication instance
@@ -44,6 +45,11 @@ export const Landing = () => {
         }
     };
 
+    // Function to update the score
+    const updateScore = (newScore) => {
+        setScore(newScore);
+    };
+
     return (
         <div className="landing_page">
             <div className="landing_page_wrapper">
@@ -56,12 +62,12 @@ export const Landing = () => {
                     <>
                         <Link to="daily"><DailyBtn /></Link>
                         <PracticeBtn />
-                            
-<p className="greeting-message">Hello {userName}. Your current total score is 0.</p>
-
+                        <p className="greeting-message">Hello {userName}. Your current total score is {score}.</p>
                     </>
                 )}
             </div>
         </div>
     )
 }
+
+export default Landing;
