@@ -1,26 +1,31 @@
 import React from "react";
-import "./App.css";
+import "./Gnb.css";
 import "./styleguide.css";
+import { Link } from "react-router-dom";
 
-export const GNB = () => {
+export const Gnb = ({ round, totalScore }) => {
     return (
         <div className="gnb">
-            var round = 1;
-            var score = 0;
-            <div className="gnb_wrapper">
-                <div className="title">
-                    <p className="title_left">CalFood</p><p className="title_right">Guesser</p>
+            <p className="title_gnb">
+                <span className="title_left">CalFood</span>
+                <span className="title_right">Guesser</span>
+            </p>
+
+            <div className="navbar">
+                <div className="round">
+                    <p className="round_wrapper">
+                        <span className="txt">round : </span>
+                        <span className="num">{totalScore}</span>
+                    </p>
                 </div>
-                <div className="navbar">
-                    <div className="round">
-                        <p className="round_txt">Round :</p><p className="round_num">{round}</p>
-                    </div>
-                    <div className="score">
-                        <p className="score_txt">Score :</p><p className="score_num">{score}</p>
-                    </div>
-                    <img src="https://img.icons8.com/ios/452/user--v1.png" alt="home" className="home_btn" />
-                    <img src="https://img.icons8.com/ios/452/exit.png" alt="info" className="info_btn" />
+                <div className="score">
+                    <p className="score_wrapper">
+                        <span className="txt">score : </span>
+                        <span className="num">{round}</span>
+                    </p>
                 </div>
+                <Link to="/" className="a"><img className="home_btn" alt="Home btn" src="/img/home-btn.png" /></Link>
+                <Link to="/" className="a"><img className="info_btn" alt="Info btn" src="/img/info-btn.png" /></Link>
             </div>
         </div>
     )
