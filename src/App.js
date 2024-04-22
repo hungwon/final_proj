@@ -3,6 +3,7 @@ import './styleguide.css';
 import React from 'react';
 import { Landing } from './Landing';
 import { Game } from './GamePageTest';
+import { Score } from './Score';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route index element={<Landing />} />
           <Route path="daily" element={<Game />} />
+          <Route path="score" element={<Score />} />
         </Routes>
       </BrowserRouter>
     </div>

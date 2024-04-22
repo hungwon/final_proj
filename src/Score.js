@@ -1,5 +1,35 @@
 import React from 'react';
+import "./styleguide.css";
+import "./score.css";
+import data from "./data.json";
+import "./game";
+import { Gnb } from "./Gnb";
+import { ResultCard } from "./Card";
+import { NextBtn } from "./Buttons";
 
+
+export const Score = () => {
+  let restaurant = game.getRestaurant();
+  let round = game.getRound();
+  let totalScore = game.getTotalScore();
+  let guessScore = game.getGuessScore();
+  let score = game.getScore();
+  let prevGuesses = game.getPrevGuesses();
+
+  return (
+    <div className='score'>
+      <Gnb round={round} totalScore={totalScore} />
+      <div className='result_card_wrapper'>
+        <ResultCard restaurant={restaurant} guesses={prevGuesses} guessScore={guessScore} score={score} />
+      </div>
+      <div className='next_btn_wrapper'>
+        <NextBtn />
+      </div>
+    </div>
+  )
+}
+
+/*
 class Score extends React.Component {
   constructor(props) {
     super(props);
@@ -47,3 +77,4 @@ class Score extends React.Component {
 }
 
 export default Score;
+*/
