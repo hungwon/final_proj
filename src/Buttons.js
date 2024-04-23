@@ -2,13 +2,19 @@ import React from "react";
 import "./styleguide.css";
 import "./Btn.css";
 import data from "./data.json";
+import { newGame, guess } from "./game";
+import { useNavigate } from 'react-router-dom';
 
 
 export const DailyBtn = () => {
+    const handleClick = () => {
+        console.log("Daily button clicked 1");
+        newGame();
+    }
     console.log("Daily button clicked");
     return (
         <>
-            <button className="daily_btn start_btn">Daily</button>
+            <button className="daily_btn start_btn" onClick={handleClick}>Daily</button>
         </>
     )
 }
@@ -50,12 +56,22 @@ export const PracticeBtn = () => {
 }
 
 export const GuessBtn = () => {
+    const navigate = useNavigate();
+    console.log("Guess button clicked");
+
+    let selectHandler = (e) => {
+        if (guess(e.target.value)) {
+            navigate('../score');
+        }
+    }
+
     return (
         <>
-            <select className="guess_btn">
+            <select className="guess_btn" onChange={selectHandler} >
+                <option value="">--Please choose an option--</option>
                 {
-                    data.map((item) => (
-                        <option value={item.id}>{item.name}</option>
+                    data.map((item, index) => (
+                        <option value={item.name} key={index}>{item.name}</option>
                     ))
                 }
             </select>

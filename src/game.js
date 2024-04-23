@@ -13,6 +13,7 @@ function randomIndex() {
 }
 
 export function newGame() {
+    console.log("new game started");
     const restaurantIndex = randomIndex();
     const restaurant = df[restaurantIndex];
     const levelScore = parseInt(restaurant.popularity) * 10;
@@ -28,6 +29,14 @@ export function newGame() {
     localStorage.setItem('guessScore', 0);
     localStorage.setItem('prevGuess', []); // list of previous guesses( = list of restaurant.name)
 
+    // print every value in local storage
+    console.log("local storage values:");
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+        console.log(`${key}: ${value}`);
+    }
+
     return df[randomIndex];
 }
 
@@ -35,9 +44,9 @@ export function newRound() {
     const restaurantIndex = randomIndex();
     const restaurant = df[restaurantIndex];
     const levelScore = parseInt(restaurant.popularity) * 10;
-    const round = localStorage.getItem('round') + 1;
+    const round = parseInt(localStorage.getItem('round')) + 1;
     const records = localStorage.getItem('records');
-    const totalScore = localStorage.getItem('totalScore');
+    const totalScore = parseInt(localStorage.getItem('totalScore'));
 
     localStorage.setItem('restaurantIndex', randomIndex);
     localStorage.setItem('round', round);
@@ -54,7 +63,7 @@ export function newRound() {
 }
 
 export function incrementNumGuess() {
-    let numGuess = localStorage.getItem('numGuess');
+    let numGuess = parseInt(localStorage.getItem('numGuess'));
     numGuess += 1;
     localStorage.setItem('numGuess', numGuess);
 }
@@ -73,15 +82,16 @@ export function updateGuessScore() {
     let numGuess = localStorage.getItem('numGuess');
     let score = getLvScore();
     let guessScore = parseInt((100 - score) / numGuess)
+    console.log(`guessScore: ${guessScore}`);
     localStorage.setItem('guessScore', guessScore);
 }
 
 export function getLvScore() {
-    return localStorage.getItem('levelScore');
+    return parseInt(localStorage.getItem('levelScore'));
 }
 
 export function getGuessScore() {
-    return localStorage.getItem('guessScore');
+    return parseInt(localStorage.getItem('guessScore'));
 }
 
 export function updateScore(input) {
@@ -97,16 +107,18 @@ export function updateScore(input) {
 }
 
 export function getScore() {
-    return localStorage.getItem('score');
+    return parseInt(localStorage.getItem('score'));
 }
 
 export function getTotalScore() {
-    return localStorage.getItem('totalScore');
+    return parseInt(localStorage.getItem('totalScore'));
 }
 
 export function updateTotalScore() {
     let totalScore = getTotalScore();
-    totalScore += getScore();
+    let score = getScore();
+    totalScore += score;
+    console.log(`totalScore changed from ${totalScore - score} to ${totalScore}`);
     localStorage.setItem('totalScore', totalScore);
 }
 
@@ -138,11 +150,15 @@ export function saveRecords() {
 }
 
 export function guess(input) {
+    if (input === "") {
+        console.log("Please select a restaurant");
+        return false;
+    }
     // update number of guesses
     incrementNumGuess();
 
     // add current guess to  previous guesses lst
-    addPrevGuess(input);
+    //addPrevGuess(input);
 
     // update guess score
     updateGuessScore();
@@ -153,15 +169,15 @@ export function guess(input) {
     // update total score
     updateTotalScore();
     let numGuess = getNumGuess();
-    let correct = false;
-    // save records
-    if (input === getRestaurant().name || numGuess === 5) {
-        saveRecords();
-        correct = true;
-    }
 
-    // condition for next round if it is true then we will navigate to result page or score page
-    const condition = (numGuess <= 4 && correct);
-    return condition;
+    // save records
+    if (input === getRestaurant().name || numGuess >= 5) {
+        //saveRecords();
+        console.log(`you select ${input}, move to next round`);
+        return true;
+    } else {
+        console.log(`wrong guess`);
+        return false;
+    }
 }
 

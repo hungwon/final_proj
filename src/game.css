@@ -2,8 +2,7 @@
     font-family: "IBM Plex Mono", monospace;
 }
 
-
-.score_page {
+.game_page {
     display: flex;
     height: 100vh;
     width: 100%;
@@ -13,9 +12,21 @@
     align-items: center;
 }
 
-.result_card_wrapper {
+.game-container {
+    padding: 20px;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+}
+
+.round-container {
+    display: flex;
+    gap: 70px;
+}
+
+.game-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

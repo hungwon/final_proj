@@ -8,45 +8,26 @@ const totalGuesses = 5;
 // Calculate color of the score number
 function calculateColor(number) {
     if (number > 85) {
-      return "var(--green)";
+        return "var(--green)";
     } else if (number > 50) {
-      return "var(--dark_gold)";
+        return "var(--dark_gold)";
     } else {
-      return "var(--red)";
+        return "var(--red)";
     }
-}
-
-const PrevAns = ({ isCorrect, guess }) => {
-    return (
-        <div className="prev-ans">
-            {isCorrect ? (
-                <div className="checkmark"></div>
-            ) : (
-                <div className="cross"></div>
-            )}
-            <span>{guess}</span>
-        </div>
-    )
 }
 
 export const RestaurantCard = ({ restaurant }) => {
     return (
         <div className="card restaurant-card">
             <div className="img-container">
-                <img 
+                <img
                     src={restaurant.img}
                     alt="Menu item clue"
                 />
             </div>
             <div className="guess-container">
                 <GuessBtn />
-                <div className="trial-indicator">
-                    <span id="guess-no">1</span>
-                    <span>/{totalGuesses}</span>
-                </div>
             </div>
-            <div className="prevAns-container"></div>
-            <div className="shadow"></div>
         </div>
     )
 }
@@ -106,7 +87,7 @@ export const ScoreCard = ({ difficultyScore, guessScore, score }) => {
                         Total
                     </div>
                     <div className="scores">
-                        {difficultyScore}
+                        LV {difficultyScore}
                         <br></br>
                         {guessScore}
                         <br></br>
@@ -165,38 +146,29 @@ export const SummaryCard = ({ restaurant, roundno, guessno, score }) => {
                     </div>
                 </div>
                 <div className="restaurant-link">
-                    <a href={restaurant.url} rel="noreferrer" target= "_blank">Link to Restaurant</a>
+                    <a href={restaurant.url} rel="noreferrer" target="_blank">Link to Restaurant</a>
                 </div>
             </div>
         </div>
     )
 }
 
-export const ResultCard = ({ restaurant, guesses, guessScore, score }) => {
+export const ResultCard = ({ restaurant, guessScore, score }) => {
     const isWin = (score > 0);
 
     return (
         <div className="card result-card">
             <div className="result-left">
                 <div className="img-container">
-                    <img 
+                    <img
                         src={restaurant.img}
                         alt={restaurant.name}
                     />
                 </div>
-                <div className="result-prevAns">
-                    {guesses.map((guess, index) => (
-                        <PrevAns
-                            key={index}
-                            guess={guess}
-                            isCorrect={index === 0 ? isWin : false}
-                        />
-                    ))}
-                </div>
             </div>
             <div className="result-right">
                 <ProfileCard restaurant={restaurant} isRevealed={true} />
-                <ScoreCard guessScore={guessScore} score={score} />
+                <ScoreCard difficultyScore={(restaurant.popularity)} guessScore={guessScore} score={score} />
             </div>
         </div>
     )

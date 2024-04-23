@@ -50,6 +50,7 @@ export const Landing = () => {
         setScore(newScore);
     };
 
+
     return (
         <div className="landing_page">
             <div className="landing_page_wrapper">
@@ -61,7 +62,6 @@ export const Landing = () => {
                 {isAuthenticated && (
                     <>
                         <Link to="daily"><DailyBtn /></Link>
-                        <PracticeBtn />
                         <p className="greeting-message">Hello {userName}. Your current total score is {score}.</p>
                     </>
                 )}
