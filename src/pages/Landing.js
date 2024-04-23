@@ -1,11 +1,12 @@
 // Landing.js
 
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import "./landing.css";
+import "../styleguide.css";
 
-import { DailyBtn, PracticeBtn } from "./Buttons";
+import { DailyBtn, PracticeBtn } from "../components/Buttons";
 import { Link } from "react-router-dom";
-import { signInWithGoogle } from "./userAuth"; // Import your Firebase authentication function
+import { signInWithGoogle } from "../components/userAuth"; // Import your Firebase authentication function
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "firebase/auth"; // Import necessary Firebase authentication functions
 
 export const Landing = () => {

@@ -1,9 +1,9 @@
 import './App.css';
 import './styleguide.css';
 import React from 'react';
-import { Landing } from './Landing';
-import { Game } from './GamePageTest';
-import { Score } from './Score';
+import { Landing } from './pages/Landing';
+import { Game } from './pages/GamePageTest';
+import { Score } from './pages/Score';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {

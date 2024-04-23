@@ -1,12 +1,12 @@
 import React from 'react';
-import "./styleguide.css";
-import data from "./data.json";
+import "../styleguide.css";
+import data from "../data.json";
 import "./score.css";
 
-import { getRestaurant, getTotalScore, getRound, getGuessScore, getPrevGuess, getScore } from "./game.js";
-import { Gnb } from "./Gnb";
-import { ResultCard } from "./Card";
-import { NextBtn } from "./Buttons";
+import { getRestaurant, getTotalScore, getRound, getGuessScore, getPrevGuess, getScore } from "../game.js";
+import { Gnb } from "../components/Gnb.js";
+import { ResultCard } from "../components/Card.js";
+import { NextBtn } from "../components/Buttons.js";
 import { useEffect, useState } from "react";
 
 

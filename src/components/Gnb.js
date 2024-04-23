@@ -1,6 +1,6 @@
 import React from "react";
 import "./Gnb.css";
-import "./styleguide.css";
+import "../styleguide.css";
 import { Link } from "react-router-dom";
 
 export const Gnb = ({ round, totalScore }) => {

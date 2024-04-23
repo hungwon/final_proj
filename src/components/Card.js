@@ -1,5 +1,5 @@
 import React from "react";
-import "./styleguide.css";
+import "../styleguide.css";
 import "./Card.css";
 import { GuessBtn } from "./Buttons";
 

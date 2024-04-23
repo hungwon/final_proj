@@ -1,10 +1,10 @@
 import React from "react";
-import "./styleguide.css";
-import data from "./data.json";
-import { Gnb } from "./Gnb";
-import { RestaurantCard, HintCard, ProfileCard } from "./Card";
-import { getRestaurant, getTotalScore, getRound, getNumGuess } from "./game.js";
-import { NextBtn } from "./Buttons";
+import "../styleguide.css";
+import data from "../data.json";
+import { Gnb } from "../components/Gnb.js";
+import { RestaurantCard, HintCard, ProfileCard } from "../components/Card.js";
+import { getRestaurant, getTotalScore, getRound, getNumGuess } from "../game.js";
+import { NextBtn } from "../components/Buttons.js";
 import { Link } from "react-router-dom";
 // just for test
 import "./game.css";

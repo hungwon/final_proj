@@ -1,8 +1,8 @@
 import React from "react";
-import "./styleguide.css";
+import "../styleguide.css";
 import "./Btn.css";
-import data from "./data.json";
-import { newGame, guess } from "./game";
+import data from "../data.json";
+import { newGame, guess } from "../game";
 import { useNavigate } from 'react-router-dom';
 
 
