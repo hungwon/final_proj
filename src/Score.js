@@ -1,20 +1,36 @@
 import React from 'react';
 import "./styleguide.css";
-import "./score.css";
 import data from "./data.json";
-import "./game";
+import "./score.css";
+
+import { getRestaurant, getTotalScore, getRound, getGuessScore, getPrevGuess, getScore } from "./game.js";
 import { Gnb } from "./Gnb";
 import { ResultCard } from "./Card";
 import { NextBtn } from "./Buttons";
+import { useState } from "react";
+import { get } from 'firebase/database';
 
 
 export const Score = () => {
-  let restaurant = game.getRestaurant();
-  let round = game.getRound();
-  let totalScore = game.getTotalScore();
-  let guessScore = game.getGuessScore();
-  let score = game.getScore();
-  let prevGuesses = game.getPrevGuesses();
+
+  // use state
+  let [score, setScore] = useState(0);
+  setScore(getScore());
+
+  let [restaurant, setRestaurant] = useState(0);
+  setRestaurant(getRestaurant());
+
+  let [round, setRound] = useState(0);
+  setRound(getRound());
+
+  let [totalScore, setTotalScore] = useState(0);
+  setTotalScore(getTotalScore());
+
+  let [guessScore, setGuessScore] = useState(0);
+  setGuessScore(getGuessScore());
+
+  let [prevGuesses, setPrevGuesses] = useState(0);
+  setPrevGuesses(getPrevGuess());
 
   return (
     <div className='score'>

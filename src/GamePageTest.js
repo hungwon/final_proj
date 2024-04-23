@@ -4,19 +4,25 @@ import data from "./data.json";
 import { Gnb } from "./Gnb";
 import { RestaurantCard, HintCard, ScoreCard, ProfileCard, SummaryCard, ResultCard } from "./Card";
 
+// just for test
+import "./score.css";
+
 export const Game = () => {
     // Generate random restaurant
     // TODO: Edit for daily set (seeded) vs. practice set (random),
     //       no repeat restaurants, and API usage.
     const randIndex = Math.floor(Math.random() * data.length);
     const randRestaurant = data[randIndex];
+
     return (
         <div className="game_page">
-            {<Gnb round={1} totalScore={0} />}
+            {<Gnb round={1} totalScore={100} />}
             {/* TODO: For testing, remove later */}
 
             {/* <RestaurantCard restaurant={randRestaurant}/> */}
-            <RestaurantCard restaurant={randRestaurant} />
+            <div className='result_card_wrapper'>
+                <RestaurantCard restaurant={randRestaurant} />
+            </div>
             {/* <HintCard restaurant={randRestaurant} hintno={1} />
             <HintCard restaurant={randRestaurant} hintno={2} /> */}
             {/* <ScoreCard guessScore={75} score={85}/> */}

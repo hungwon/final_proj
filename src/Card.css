@@ -36,7 +36,7 @@
     align-items: center;
 }
 
-.prevAns-container > .prev-ans {
+.prevAns-container>.prev-ans {
     margin-bottom: 10px;
     width: 524px;
     height: 62px;
@@ -111,7 +111,7 @@
     margin-bottom: 5px;
     border-bottom: 5px solid #78b13f;
     border-right: 5px solid #78b13f;
-  }
+}
 
 .cross {
     color: var(--red);
@@ -124,7 +124,7 @@
 
 .cross:after {
     display: inline-block;
-    content: "\00d7"; 
+    content: "\00d7";
 }
 
 
@@ -163,7 +163,8 @@
     font-weight: 500;
 }
 
-.hint-card, .profile-card {
+.hint-card,
+.profile-card {
     /* min-height: 220px; */
 }
 
@@ -185,12 +186,13 @@
     align-items: center;
 }
 
-.result-profile-card, .summary-card {
+.result-profile-card,
+.summary-card {
     height: 306px;
     max-height: 306px;
 }
 
-.summary-card > .card-content {
+.summary-card>.card-content {
     margin-top: 40px;
 }
 
@@ -222,7 +224,7 @@
     text-align: center;
 }
 
-.restaurant-link > a {
+.restaurant-link>a {
     color: inherit;
     font-weight: 500;
 }

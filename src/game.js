@@ -72,9 +72,8 @@ export function addPrevGuess(input) {
 export function updateGuessScore() {
     let numGuess = localStorage.getItem('numGuess');
     let score = getLvScore();
-    let guessScore = int((100 - score) / numGuess)
+    let guessScore = parseInt((100 - score) / numGuess)
     localStorage.setItem('guessScore', guessScore);
-    return None;
 }
 
 export function getLvScore() {
@@ -95,7 +94,6 @@ export function updateScore(input) {
         score = 0;
     }
     localStorage.setItem('score', score);
-    return None;
 }
 
 export function getScore() {
@@ -110,7 +108,6 @@ export function updateTotalScore() {
     let totalScore = getTotalScore();
     totalScore += getScore();
     localStorage.setItem('totalScore', totalScore);
-    return None;
 }
 
 export function getRecords() {
@@ -155,10 +152,12 @@ export function guess(input) {
 
     // update total score
     updateTotalScore();
-
+    let numGuess = getNumGuess();
+    let correct = false;
     // save records
-    if (input === getRestaurant().name || getNumGuess() === 5) {
+    if (input === getRestaurant().name || numGuess === 5) {
         saveRecords();
+        correct = true;
     }
 
     // condition for next round if it is true then we will navigate to result page or score page
