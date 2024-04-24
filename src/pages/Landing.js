@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import "./landing.css";
 import "../styleguide.css";
+import { useDispatch, useSelector } from 'react-redux';
 
 import { DailyBtn, PracticeBtn } from "../components/Buttons";
 import { Link } from "react-router-dom";
@@ -10,6 +11,7 @@ import { signInWithGoogle } from "../components/userAuth"; // Import your Fireba
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "firebase/auth"; // Import necessary Firebase authentication functions
 
 export const Landing = () => {
+    let state = useSelector(state => state);
     const [isAuthenticated, setIsAuthenticated] = useState(false); // State variable to track authentication status
     const [userName, setUserName] = useState(""); // State variable to store the user's name
     const [score, setScore] = useState(0); // State variable to store the score
@@ -63,7 +65,7 @@ export const Landing = () => {
                 {isAuthenticated && (
                     <>
                         <Link to="daily"><DailyBtn /></Link>
-                        <p className="greeting-message">Hello {userName}. Your current total score is {score}.</p>
+                        <p className="greeting-message">Hello {userName}. Your current total score is {state.game.totalScore}.</p>
                     </>
                 )}
             </div>
