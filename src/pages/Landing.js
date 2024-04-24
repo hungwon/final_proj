@@ -4,11 +4,13 @@ import React, { useState, useEffect } from "react";
 import "./landing.css";
 import "../styleguide.css";
 import { useDispatch, useSelector } from 'react-redux';
-
-import { DailyBtn, PracticeBtn } from "../components/Buttons";
 import { Link } from "react-router-dom";
 import { signInWithGoogle } from "../components/userAuth"; // Import your Firebase authentication function
-import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "firebase/auth"; // Import necessary Firebase authentication functions
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "firebase/auth";
+import { getDatabase, ref, set } from "firebase/database"; // Import necessary Firebase database functions
+
+// Import DailyBtn component from the correct path
+import { DailyBtn } from "../components/Buttons";
 
 export const Landing = () => {
     let state = useSelector(state => state);
@@ -50,9 +52,16 @@ export const Landing = () => {
 
     // Function to update the score
     const updateScore = (newScore) => {
+        // Get the authentication instance
+        const auth = getAuth();
+        // Update score in Firebase
+        const db = getDatabase();
+        const scoreRef = ref(db, `users/${auth.currentUser.uid}/score`); // Assuming each user has a unique ID
+        set(scoreRef, newScore); // Set the new score in the database
+
+        // Also update the local state
         setScore(newScore);
     };
-
 
     return (
         <div className="landing_page">
