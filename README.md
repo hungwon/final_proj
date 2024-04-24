@@ -1,9 +1,9 @@
 # Group 7
 ### Wasi Ahmed - wahmed937@berkeley.edu / wasi2005  - Backend
-### Hungwon Choi - hun3359@berkeley.edu / hungwon   - Front end / desgin
-### Miranda Zhang - mirzha@berkeley.edu / mirandazhang10 - Front end /design 
+### Hungwon Choi - hun3359@berkeley.edu / hungwon   - Frontend / desgin
+### Miranda Zhang - mirzha@berkeley.edu / mirandazhang10 - Frontend /design 
 ### Nicolas (Nico) Vega - nvegab99@berkeley.edu 
-### Nithurhan Carthikeyan - nithurhan@berkeley.edu / NC25, Nithurhan25  - Front end
+### Nithurhan Carthikeyan - nithurhan@berkeley.edu / NC25, Nithurhan25  - Frontend
 
 # Main Idea:
 We will randomly output a picture of one of the foods, and there will be a regenerate button to output a new picture
