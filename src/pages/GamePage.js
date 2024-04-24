@@ -46,7 +46,7 @@ export const Game = () => {
                         }
                     </div>
                 </div>
-                <Link to="../score" relative="path"><NextBtn /></Link>
+                {/*<Link to="../score" relative="path"><NextBtn /></Link>*/}
             </div>
         </div>
     )
