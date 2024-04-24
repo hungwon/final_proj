@@ -1,9 +1,9 @@
 # Group 7
-### Wasi Ahmed - wahmed937@berkeley.edu 
-### Hungwon Choi - hun3359@berkeley.edu
-### Miranda Zhang - mirzha@berkeley.edu
-### Nicolas (Nico) Vega - nvegab99@berkeley.edu
-### Nithurhan Carthikeyan - nithurhan@berkeley.edu
+### Wasi Ahmed - wahmed937@berkeley.edu - Login Features
+### Hungwon Choi - hun3359@berkeley.edu - Front end / desgin
+### Miranda Zhang - mirzha@berkeley.edu - Front end /design
+### Nicolas (Nico) Vega - nvegab99@berkeley.edu - None
+### Nithurhan Carthikeyan - nithurhan@berkeley.edu - game logic/ Front end
 
 # Main Idea:
 Basically, we have a database (or list of foods from Berkeley restaurants) 
