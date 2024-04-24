@@ -65,7 +65,7 @@ export const Landing = () => {
                 {isAuthenticated && (
                     <>
                         <Link to="daily"><DailyBtn /></Link>
-                        <p className="greeting-message">Hello {userName}. Your current total score is {state.game.totalScore}.</p>
+                        <p className="greeting-message">Hello {userName}. Your last score was {state.game.totalScore}.</p>
                     </>
                 )}
             </div>
