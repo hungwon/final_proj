@@ -4,7 +4,7 @@ import "./score.css";
 import { Gnb } from "../components/Gnb.js";
 import { ResultCard } from "../components/Card.js";
 import { NextBtn } from "../components/Buttons.js";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 
 
@@ -15,7 +15,6 @@ export const Score = () => {
     <div className='score_page'>
       <Gnb round={state.game.round} totalScore={state.game.totalScore} />
       <div className='result_card_wrapper'>
-        {console.log(state.game.idx)}
         <ResultCard id={state.game.idx} guessScore={state.game.guessScore} score={state.game.score} />
       </div>
       <div className='next_btn_wrapper'>

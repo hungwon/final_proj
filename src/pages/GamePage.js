@@ -3,14 +3,11 @@ import "../styleguide.css";
 import { Gnb } from "../components/Gnb.js";
 import { RestaurantCard, HintCard, ProfileCard } from "../components/Card.js";
 import { useNavigate } from 'react-router-dom';
-import { NextBtn } from "../components/Buttons.js";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import "./game.css";
 import { useEffect } from 'react';
 
 export const Game = () => {
-    // Empty dependency array ensures this effect runs only once on component mount
     let state = useSelector(state => state);
     let correct = state.game.correct;
     let dispatch = useDispatch();
@@ -24,8 +21,13 @@ export const Game = () => {
     }
     useEffect(() => {
         if (correct) {
-            console.log("move to next round");
-            navigate('../score');
+            if (state.game.round <= 2) {
+                console.log("move to next round");
+                navigate('../score');
+            } else {
+                console.log("move to result page");
+                navigate('../result');
+            }
         }
     }, [correct, navigate]);
 
@@ -46,7 +48,6 @@ export const Game = () => {
                         }
                     </div>
                 </div>
-                {/*<Link to="../score" relative="path"><NextBtn /></Link>*/}
             </div>
         </div>
     )
