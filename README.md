@@ -1,9 +1,9 @@
 # Group 7
-### Wasi Ahmed - wahmed937@berkeley.edu - Login Features
-### Hungwon Choi - hun3359@berkeley.edu - Front end / desgin
-### Miranda Zhang - mirzha@berkeley.edu - Front end /design
+### Wasi Ahmed - wahmed937@berkeley.edu / wasi2005  - Login Features
+### Hungwon Choi - hun3359@berkeley.edu / hungwon   - Front end / desgin
+### Miranda Zhang - mirzha@berkeley.edu / mirandazhang10 - Front end /design 
 ### Nicolas (Nico) Vega - nvegab99@berkeley.edu 
-### Nithurhan Carthikeyan - nithurhan@berkeley.edu - game logic/ Front end
+### Nithurhan Carthikeyan - nithurhan@berkeley.edu / NC25  - game logic/ Front end
 
 # Main Idea:
 We will randomly output a picture of one of the foods, and there will be a regenerate button to output a new picture
