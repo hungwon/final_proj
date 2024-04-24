@@ -18,6 +18,7 @@
     border-radius: 30px;
     padding: 50px;
     position: relative;
+    overflow: auto;
 }
 
 p {
@@ -56,4 +57,20 @@ h1 {
 .cross-info:hover {
     color: var(--dark_grey);
     cursor: pointer;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.666);
+    border-radius: 20px;
+    border: transparent;
 }
