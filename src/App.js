@@ -2,7 +2,7 @@ import './App.css';
 import './styleguide.css';
 import React from 'react';
 import { Landing } from './pages/Landing';
-import { Game } from './pages/GamePageTest';
+import { Game } from './pages/GamePage';
 import { Score } from './pages/Score';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
