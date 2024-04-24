@@ -2,16 +2,21 @@ import React from "react";
 import "../styleguide.css";
 import "./Btn.css";
 import data from "../data.json";
-import { newGame, guess } from "../game";
-import { useNavigate } from 'react-router-dom';
+//import { newGame, guess } from "../game";
+import { useDispatch, useSelector } from 'react-redux';
+
+import { newGame, newRound, guess } from "../store.js";
 
 
 export const DailyBtn = () => {
+    let state = useSelector(state => state);
+    let dispatch = useDispatch();
+
     const handleClick = () => {
-        console.log("Daily button clicked 1");
-        newGame();
+        console.log("Daily button clicked");
+        dispatch(newGame());
     }
-    console.log("Daily button clicked");
+
     return (
         <>
             <button className="daily_btn start_btn" onClick={handleClick}>Daily</button>
@@ -20,7 +25,7 @@ export const DailyBtn = () => {
 }
 
 export const AgainBtn = () => {
-    console.log("Again button clicked");
+    //console.log("Again button clicked");
     return (
         <>
             <button className="again_btn">Play Again</button>
@@ -29,16 +34,21 @@ export const AgainBtn = () => {
 }
 
 export const NextBtn = () => {
-    console.log("Next button clicked");
+    let dispatch = useDispatch();
+    let clickHandler = (e) => {
+        console.log("next button clicked");
+        // after state.correct changed, re render the page
+        dispatch(newRound());
+    }
     return (
         <>
-            <button className="next_btn">Next</button>
+            <button className="next_btn" onClick={clickHandler}>Next</button>
         </>
     )
 }
 
 export const HomeBtn = () => {
-    console.log("Home button clicked");
+    //console.log("Home button clicked");
     return (
         <>
             <button className="again_btn">Home</button>
@@ -56,13 +66,15 @@ export const PracticeBtn = () => {
 }
 
 export const GuessBtn = () => {
-    const navigate = useNavigate();
-    console.log("Guess button clicked");
+    let state = useSelector(state => state);
+    let dispatch = useDispatch();
+
+
 
     let selectHandler = (e) => {
-        if (guess(e.target.value)) {
-            navigate('../score');
-        }
+        console.log("Guess button clicked");
+        // after state.correct changed, re render the page
+        dispatch(guess(e.target.value));
     }
 
     return (

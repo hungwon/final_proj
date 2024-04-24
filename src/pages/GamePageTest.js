@@ -1,75 +1,44 @@
 import React from "react";
 import "../styleguide.css";
-import data from "../data.json";
 import { Gnb } from "../components/Gnb.js";
 import { RestaurantCard, HintCard, ProfileCard } from "../components/Card.js";
-import { getRestaurant, getTotalScore, getRound, getNumGuess } from "../game.js";
+import { useNavigate } from 'react-router-dom';
 import { NextBtn } from "../components/Buttons.js";
 import { Link } from "react-router-dom";
-// just for test
+import { useDispatch, useSelector } from 'react-redux';
 import "./game.css";
-import { useEffect, useState } from "react";
+import { useEffect } from 'react';
 
 export const Game = () => {
-    let [restaurant, setRestaurant] = useState(data[0])
-    let [round, setRound] = useState(1);
-    let [totalScore, setTotalScore] = useState(0);
-    let [numGuess, setNumGuess] = useState(0);
-
-    useEffect(() => {
-        let restaurant_data = getRestaurant();
-        console.log(restaurant_data.name);
-        if (restaurant_data) {
-            setRestaurant(restaurant_data);
-        } else {
-            console.log("rest_obj is null");
-            setRestaurant(data[0]);
-        }
-
-        let round_data = parseInt(getRound());
-        if (!round_data) {
-            console.log("round is null");
-            setRound(1);
-        } else {
-            setRound(round_data);
-        }
-
-        let totScore_data = parseInt(getTotalScore());
-        if (!totScore_data) {
-            console.log("totalScore is null");
-            setTotalScore(0);
-        } else {
-            setTotalScore(totScore_data);
-        }
-
-        let numGuess_data = parseInt(getNumGuess());
-        if (!numGuess_data) {
-            console.log("numGuess is null");
-            setNumGuess(0);
-        } else {
-            setNumGuess(numGuess_data);
-        }
-    }, []); // Empty dependency array ensures this effect runs only once on component mount
+    // Empty dependency array ensures this effect runs only once on component mount
+    let state = useSelector(state => state);
+    let correct = state.game.correct;
+    let dispatch = useDispatch();
+    const navigate = useNavigate();
 
     let hintCards = [];
-    for (let i = 1; i <= numGuess; i++) {
+    for (let i = 1; i <= state.game.numGuess; i++) {
         if (i <= 2) {
-            hintCards.push(<HintCard restaurant={restaurant} hintno={i} key={i} />);
+            hintCards.push(<HintCard id={state.game.idx} hintno={i} key={i} />);
         }
     }
-
-
+    useEffect(() => {
+        if (correct) {
+            console.log("move to next round");
+            navigate('../score');
+        }
+    }, [correct, navigate]);
 
     return (
         <div className="game_page">
-            <Gnb round={round} totalScore={totalScore} />
+            <Gnb round={state.game.round} totalScore={state.game.totalScore} />
             <div className="game-container">
                 <div className="round-container">
                     <div className="game-left">
-                        <RestaurantCard restaurant={restaurant} />
+                        <RestaurantCard id={state.game.idx} numGuess={state.game.numGuess} />
                     </div>
                     <div className="game-right">
-                        <ProfileCard restaurant={restaurant} isRevealed={false} />
+                        <ProfileCard id={state.game.idx} isRevealed={false} />
                         {
                             hintCards.map((hintCard) => (
                                 hintCard

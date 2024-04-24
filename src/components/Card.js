@@ -2,6 +2,7 @@ import React from "react";
 import "../styleguide.css";
 import "./Card.css";
 import { GuessBtn } from "./Buttons";
+import df from "../data.json";
 
 const totalGuesses = 5;
 
@@ -16,7 +17,8 @@ function calculateColor(number) {
     }
 }
 
-export const RestaurantCard = ({ restaurant }) => {
+export const RestaurantCard = ({ id, numGuess }) => {
+    const restaurant = df[id];
     return (
         <div className="card restaurant-card">
             <div className="img-container">
@@ -27,12 +29,17 @@ export const RestaurantCard = ({ restaurant }) => {
             </div>
             <div className="guess-container">
                 <GuessBtn />
+                <div className="trial-indicator">
+                    <span id="guess-no">{numGuess}</span>
+                    <span>/{totalGuesses}</span>
+                </div>
             </div>
         </div>
     )
 }
 
-export const HintCard = ({ restaurant, hintno }) => {
+export const HintCard = ({ id, hintno }) => {
+    const restaurant = df[id];
     var Content;
     if (hintno === 1) {
         console.log("Displaying hint 1")
@@ -99,7 +106,8 @@ export const ScoreCard = ({ difficultyScore, guessScore, score }) => {
     )
 }
 
-export const ProfileCard = ({ restaurant, isRevealed }) => {
+export const ProfileCard = ({ id, isRevealed }) => {
+    const restaurant = df[id];
     const menuItems = restaurant.top5_menu.join(', ');
 
     return (
@@ -121,7 +129,8 @@ export const ProfileCard = ({ restaurant, isRevealed }) => {
     )
 }
 
-export const SummaryCard = ({ restaurant, roundno, guessno, score }) => {
+export const SummaryCard = ({ id, roundno, guessno, score }) => {
+    const restaurant = df[id];
     const textColor = calculateColor(score);
 
     return (
@@ -153,7 +162,8 @@ export const SummaryCard = ({ restaurant, roundno, guessno, score }) => {
     )
 }
 
-export const ResultCard = ({ restaurant, guessScore, score }) => {
+export const ResultCard = ({ id, guessScore, score }) => {
+    const restaurant = df[id];
     const isWin = (score > 0);
 
     return (
@@ -167,7 +177,7 @@ export const ResultCard = ({ restaurant, guessScore, score }) => {
                 </div>
             </div>
             <div className="result-right">
-                <ProfileCard restaurant={restaurant} isRevealed={true} />
+                <ProfileCard id={id} isRevealed={true} />
                 <ScoreCard difficultyScore={(restaurant.popularity)} guessScore={guessScore} score={score} />
             </div>
         </div>

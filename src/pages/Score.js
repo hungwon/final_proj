@@ -1,17 +1,35 @@
 import React from 'react';
 import "../styleguide.css";
-import data from "../data.json";
+import df from "../data.json";
 import "./score.css";
-
-import { getRestaurant, getTotalScore, getRound, getGuessScore, getPrevGuess, getScore } from "../game.js";
 import { Gnb } from "../components/Gnb.js";
 import { ResultCard } from "../components/Card.js";
 import { NextBtn } from "../components/Buttons.js";
-import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from "react-router-dom";
 
 
 export const Score = () => {
-  let [restaurant, setRestaurant] = useState(data[0])
+  let state = useSelector(state => state);
+  let dispatch = useDispatch();
+
+
+  return (
+    <div className='score_page'>
+      <Gnb round={state.game.round} totalScore={state.game.totalScore} />
+      <div className='result_card_wrapper'>
+        {console.log(state.game.idx)}
+        <ResultCard id={state.game.idx} guessScore={state.game.guessScore} score={state.game.score} />
+      </div>
+      <div className='next_btn_wrapper'>
+        <Link to="../daily" relative='path'><NextBtn /></Link>
+      </div>
+    </div>
+  )
+}
+
+/*
+let [restaurant, setRestaurant] = useState(data[0])
   let [round, setRound] = useState(1);
   let [totalScore, setTotalScore] = useState(0);
   let [guessScore, setGuessScore] = useState(0);
@@ -67,17 +85,5 @@ export const Score = () => {
     } else {
       setPrevGuesses(prevGuesses_data);
     }
-  }, []); // Empty dependency array ensures this effect runs only once on component mount
-
-  return (
-    <div className='score_page'>
-      <Gnb round={round} totalScore={totalScore} />
-      <div className='result_card_wrapper'>
-        <ResultCard restaurant={restaurant} guessScore={guessScore} score={score} />
-      </div>
-      <div className='next_btn_wrapper'>
-        <NextBtn />
-      </div>
-    </div>
-  )
-}
+  }, []); 
+  */
