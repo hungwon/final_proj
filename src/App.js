@@ -14,6 +14,7 @@ function App() {
         <Routes>
           <Route index element={<Landing />} />
           <Route path="daily" element={<Game />} />
+          <Route path="practice" element={<Game />} />
           <Route path="score" element={<Score />} />
           <Route path="result" element={<Result />} />
         </Routes>

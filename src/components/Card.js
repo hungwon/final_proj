@@ -4,8 +4,6 @@ import "./Card.css";
 import { GuessBtn } from "./Buttons";
 import df from "../data.json";
 
-const totalGuesses = 5;
-
 // Calculate color of the score number
 function calculateColor(number) {
     if (number > 85) {
@@ -17,7 +15,20 @@ function calculateColor(number) {
     }
 }
 
-export const RestaurantCard = ({ id, numGuess }) => {
+const PrevAns = ({ isCorrect, guess }) => {
+    return (
+        <div className="prev-ans">
+            {isCorrect ? (
+                <div className="checkmark"></div>
+            ) : (
+                <div className="cross"></div>
+            )}
+            <span>{guess}</span>
+        </div>
+    )
+}
+
+export const RestaurantCard = ({ id, numGuess, totalGuesses }) => {
     const restaurant = df[id];
     return (
         <div className="card restaurant-card">
@@ -34,6 +45,8 @@ export const RestaurantCard = ({ id, numGuess }) => {
                     <span>/{totalGuesses}</span>
                 </div>
             </div>
+            <div className="prevAns-container"></div>
+            <div className="shadow"></div>
         </div>
     )
 }
@@ -129,8 +142,11 @@ export const ProfileCard = ({ id, isRevealed }) => {
     )
 }
 
-export const SummaryCard = ({ id, roundno, guessno, score }) => {
-    const restaurant = df[id];
+export const SummaryCard = ({ roundInfo, totalGuesses }) => {
+    const restaurant = df[roundInfo.id];
+    const roundno = roundInfo.round;
+    const guessno = roundInfo.numGuesses;
+    const score = roundInfo.score;
     const textColor = calculateColor(score);
 
     return (
@@ -162,7 +178,7 @@ export const SummaryCard = ({ id, roundno, guessno, score }) => {
     )
 }
 
-export const ResultCard = ({ id, guessScore, score }) => {
+export const ResultCard = ({ id, guesses, guessScore, score }) => {
     const restaurant = df[id];
     const isWin = (score > 0);
 
@@ -174,6 +190,15 @@ export const ResultCard = ({ id, guessScore, score }) => {
                         src={restaurant.img}
                         alt={restaurant.name}
                     />
+                </div>
+                <div className="result-prevAns">
+                    {guesses.map((guess, index) => (
+                        <PrevAns
+                            key={index}
+                            guess={guess}
+                            isCorrect={index === 0 ? isWin : false}
+                        />
+                    ))}
                 </div>
             </div>
             <div className="result-right">

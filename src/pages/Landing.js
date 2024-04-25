@@ -9,8 +9,8 @@ import { signInWithGoogle } from "../components/userAuth"; // Import your Fireba
 import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "firebase/auth";
 import { getDatabase, ref, set } from "firebase/database"; // Import necessary Firebase database functions
 
-// Import DailyBtn component from the correct path
-import { DailyBtn } from "../components/Buttons";
+// Import DailyBtn and PracticeBtn components from the correct path
+import { DailyBtn, PracticeBtn } from "../components/Buttons";
 
 export const Landing = () => {
     let state = useSelector(state => state);
@@ -74,6 +74,7 @@ export const Landing = () => {
                 {isAuthenticated && (
                     <>
                         <Link to="daily"><DailyBtn /></Link>
+                        <Link to="practice"><PracticeBtn /></Link>
                         <p className="greeting-message">Hello {userName}. Your last score was {state.game.totalScore}.</p>
                     </>
                 )}

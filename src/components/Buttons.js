@@ -14,7 +14,7 @@ export const DailyBtn = () => {
 
     const handleClick = () => {
         console.log("Daily button clicked");
-        dispatch(newGame());
+        dispatch(newGame({ mode: 'daily' }));
     }
 
     return (
@@ -47,6 +47,14 @@ export const NextBtn = () => {
     )
 }
 
+export const ResultsBtn = () => {
+    return (
+        <>
+            <button className="next_btn">Results</button>
+        </>
+    )
+}
+
 export const HomeBtn = () => {
     //console.log("Home button clicked");
     return (
@@ -57,10 +65,17 @@ export const HomeBtn = () => {
 }
 
 export const PracticeBtn = () => {
-    console.log("Practice button clicked");
+    let state = useSelector(state => state);
+    let dispatch = useDispatch();
+
+    const handleClick = () => {
+        console.log("Practice button clicked");
+        dispatch(newGame({ mode: 'practice' }));
+    }
+
     return (
         <>
-            <button className="practice_btn start_btn">Practice</button>
+            <button className="practice_btn start_btn" onClick={handleClick}>Practice</button>
         </>
     )
 }

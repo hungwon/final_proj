@@ -21,13 +21,8 @@ export const Game = () => {
     }
     useEffect(() => {
         if (correct) {
-            if (state.game.round <= 2) {
-                console.log("move to next round");
-                navigate('../score');
-            } else {
-                console.log("move to result page");
-                navigate('../result');
-            }
+            console.log("move to score page");
+            navigate('../score');
         }
     }, [correct, navigate]);
 
@@ -37,7 +32,7 @@ export const Game = () => {
             <div className="game-container">
                 <div className="round-container">
                     <div className="game-left">
-                        <RestaurantCard id={state.game.idx} numGuess={state.game.numGuess} />
+                        <RestaurantCard id={state.game.idx} numGuess={state.game.numGuess} totalGuesses={state.game.totalGuesses}/>
                     </div>
                     <div className="game-right">
                         <ProfileCard id={state.game.idx} isRevealed={false} />
