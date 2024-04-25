@@ -59,7 +59,7 @@
     font-weight: 700;
 }
 
-.score>.score_num {
+.score>.num {
     color: var(--deep_blue);
     font-weight: 700;
 }
@@ -68,4 +68,10 @@
     color: var(--deep_blue);
     font-family: "IBM Plex Mono-Regular", Helvetica;
     font-size: 20px;
+}
+
+.summary_wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
 }

@@ -142,8 +142,11 @@ export const ProfileCard = ({ id, isRevealed }) => {
     )
 }
 
-export const SummaryCard = ({ id, roundno, guessno, score, totalGuesses }) => {
-    const restaurant = df[id];
+export const SummaryCard = ({ roundInfo, totalGuesses }) => {
+    const restaurant = df[roundInfo.id];
+    const roundno = roundInfo.round;
+    const guessno = roundInfo.numGuesses;
+    const score = roundInfo.score;
     const textColor = calculateColor(score);
 
     return (

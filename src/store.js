@@ -17,6 +17,7 @@ let game = createSlice({
         levelScore: 0,          // difficulty score for given restaurant (popularity * 10)
         numGuess: 0,            // number of guesses
         guessScore: 0,          // score for current guess
+        roundInfo: [],          // list of dicts for each round's scores and guesses
         correct: false,         // condition for moving to next round
         currentMode: 'daily',   // current game mode (daily or practice)
     },
@@ -62,6 +63,7 @@ let game = createSlice({
             state.score = 0;
             state.numGuess = 0;
             state.guessScore = 0;
+            state.roundInfo = [];
             state.correct = false;
         },
         newRound(state) {
@@ -95,6 +97,15 @@ let game = createSlice({
             state.totalScore += state.score;
 
             if (cond || state.numGuess >= state.totalGuesses) {
+                const roundInfo = {
+                    round: state.round,
+                    id: state.idx,
+                    numGuesses: state.numGuess,
+                    score: state.score,
+                };
+
+                state.roundInfo.push(roundInfo);
+                
                 // after state.correct changed, re render the page
                 state.correct = true;
 
