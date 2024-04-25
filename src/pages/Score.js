@@ -15,7 +15,7 @@ export const Score = () => {
     <div className='score_page'>
       <Gnb round={state.game.round} totalScore={state.game.totalScore} />
       <div className='result_card_wrapper'>
-        <ResultCard id={state.game.idx} guessScore={state.game.guessScore} score={state.game.score} />
+        <ResultCard id={state.game.idx} guesses={state.game.guesses} guessScore={state.game.guessScore} score={state.game.score} />
       </div>
       <div className='next_btn_wrapper'>
         {(state.game.round < state.game.totalRounds) ? (

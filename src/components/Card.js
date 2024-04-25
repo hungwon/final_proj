@@ -15,6 +15,19 @@ function calculateColor(number) {
     }
 }
 
+const PrevAns = ({ isCorrect, guess }) => {
+    return (
+        <div className="prev-ans">
+            {isCorrect ? (
+                <div className="checkmark"></div>
+            ) : (
+                <div className="cross"></div>
+            )}
+            <span>{guess}</span>
+        </div>
+    )
+}
+
 export const RestaurantCard = ({ id, numGuess, totalGuesses }) => {
     const restaurant = df[id];
     return (
@@ -32,6 +45,8 @@ export const RestaurantCard = ({ id, numGuess, totalGuesses }) => {
                     <span>/{totalGuesses}</span>
                 </div>
             </div>
+            <div className="prevAns-container"></div>
+            <div className="shadow"></div>
         </div>
     )
 }
@@ -160,7 +175,7 @@ export const SummaryCard = ({ id, roundno, guessno, score, totalGuesses }) => {
     )
 }
 
-export const ResultCard = ({ id, guessScore, score }) => {
+export const ResultCard = ({ id, guesses, guessScore, score }) => {
     const restaurant = df[id];
     const isWin = (score > 0);
 
@@ -172,6 +187,15 @@ export const ResultCard = ({ id, guessScore, score }) => {
                         src={restaurant.img}
                         alt={restaurant.name}
                     />
+                </div>
+                <div className="result-prevAns">
+                    {guesses.map((guess, index) => (
+                        <PrevAns
+                            key={index}
+                            guess={guess}
+                            isCorrect={index === 0 ? isWin : false}
+                        />
+                    ))}
                 </div>
             </div>
             <div className="result-right">
