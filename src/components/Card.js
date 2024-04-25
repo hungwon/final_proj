@@ -4,8 +4,6 @@ import "./Card.css";
 import { GuessBtn } from "./Buttons";
 import df from "../data.json";
 
-const totalGuesses = 5;
-
 // Calculate color of the score number
 function calculateColor(number) {
     if (number > 85) {
@@ -17,7 +15,7 @@ function calculateColor(number) {
     }
 }
 
-export const RestaurantCard = ({ id, numGuess }) => {
+export const RestaurantCard = ({ id, numGuess, totalGuesses }) => {
     const restaurant = df[id];
     return (
         <div className="card restaurant-card">
@@ -129,7 +127,7 @@ export const ProfileCard = ({ id, isRevealed }) => {
     )
 }
 
-export const SummaryCard = ({ id, roundno, guessno, score }) => {
+export const SummaryCard = ({ id, roundno, guessno, score, totalGuesses }) => {
     const restaurant = df[id];
     const textColor = calculateColor(score);
 

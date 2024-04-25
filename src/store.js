@@ -1,25 +1,59 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit'
-import df from "./data.json"
+import { configureStore, createSlice } from '@reduxjs/toolkit';
+import df from "./data.json";
+import seedrandom from 'seedrandom';
 
 
 let game = createSlice({
     name: 'game',
     initialState: {
-        idx: 0, // restaurant idx
+        idx: 0, // current restaurant idx
+        restaurants: [], // chosen restaurants for the game
         round: 1, // current round
+        totalRounds: 3, // total number of rounds
+        totalGuesses: 5, // total number of guesses
         totalScore: 0, // total score
         score: 0, // score for current round
         levelScore: 0, // difficulty score for given restaurant (popularity * 10)
         numGuess: 0, // number of guesses
         guessScore: 0, // score for current guess
         correct: false, // condition for moving to next round
+        currentMode: 'daily', // current game mode (daily or practice)
     },
     reducers: {
-        newGame(state) {
-            console.log("new game started");
-            const min = 0
-            const max = df.length - 1
-            state.idx = parseInt(Math.floor(Math.random() * (max - min + 1)) + min)
+        newGame(state, action) {
+            const { mode } = action.payload;
+            const min = 0;
+            const max = df.length - 1;
+            state.restaurants = [];
+            state.currentMode = mode;
+
+            if (mode === 'daily') {
+                // Select restaurants using current day as seed
+                console.log("new daily game started");
+
+                const date = new Date();
+                date.setHours(0, 0, 0, 0);
+                var daterng = seedrandom(date);
+
+                while (state.restaurants.length < state.totalRounds) {
+                    const index = Math.floor((daterng() * (max - min + 1))) + min;
+                    if (!state.restaurants.includes(index)) {
+                        state.restaurants.push(index);
+                    }
+                }
+            } else {
+                // Randomly select restaurants
+                console.log("new practice game started");
+
+                while (state.restaurants.length < state.totalRounds) {
+                    const index = Math.floor(Math.random() * (max - min + 1)) + min;
+                    if (!state.restaurants.includes(index)) {
+                        state.restaurants.push(index);
+                    }
+                }
+            }
+
+            state.idx = state.restaurants[0];
             state.levelScore = parseInt(df[state.idx].popularity) * 10;
             state.round = 1;
             state.totalScore = 0;
@@ -30,9 +64,7 @@ let game = createSlice({
         },
         newRound(state) {
             console.log("new round started");
-            const min = 0
-            const max = df.length - 1
-            state.idx = parseInt(Math.floor(Math.random() * (max - min + 1)) + min)
+            state.idx = state.restaurants[state.round];
             state.round += 1;
             state.levelScore = parseInt(df[state.idx].popularity) * 10;
             state.score = 0;
@@ -58,7 +90,7 @@ let game = createSlice({
 
             state.totalScore += state.score;
 
-            if (cond || state.numGuess >= 5) {
+            if (cond || state.numGuess >= state.totalGuesses) {
                 // after state.correct changed, re render the page
                 state.correct = true;
 
